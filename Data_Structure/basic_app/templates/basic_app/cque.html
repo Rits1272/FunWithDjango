@@ -1,0 +1,51 @@
+{% extends 'basic_app/base.html' %}
+{% block title %}Queue{% endblock %}
+
+{% block content %}
+
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline" method='GET' >
+      <input class="form-control mr-sm-2" type="search" placeholder="Item"  name='add-btn'/>
+      <button type = 'submit' class="btn btn-outline-success my-2 my-sm-0" value='Add%Btn' type="submit" >Enque</button>
+</form>
+
+<form method='GET'>
+  <button type="submit" class="btn btn-outline-danger" value = 'Del%Btn' name='del-btn'>Deque</button>
+</form>
+
+<form method='GET'>
+<button type="submit" class="btn btn-outline-warning" value='Clear&Btn' name='clear-btn'>Clear Que</button>
+</form>
+
+</nav>
+<br>
+<div class = 'container' align='center'>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary">Head : </button>
+    <button type="button" class="btn btn-secondary">{{head}}</button>
+  </div>
+
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary">Tail : </button>
+    <button type="button" class="btn btn-secondary">{{tail}}</button>
+  </div>
+</div>
+<br>
+<hr>
+<h4 align='center'>Circular Queue</h4>
+<p style="fontSize:7" align='center'>The size of the circular que is {{size}}</p>
+<div class = 'container' align='center'>
+  <br>
+  {% for e in arr %}
+    <button class = 'btn btn-outline-dark'>{{e}}</button>
+  {% endfor %}
+</div>
+<hr>
+{% if message %}
+<div class = 'jumbotron' align='center'>
+  <h3 style="color:red;">{{message}}</h3>
+</div>
+{% endif %}
+
+
+{% endblock content %}

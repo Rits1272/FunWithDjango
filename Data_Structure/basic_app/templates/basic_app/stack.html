@@ -1,0 +1,39 @@
+{% extends 'basic_app/base.html' %}
+{% block title %}Stack{% endblock %}
+
+{% block content %}
+
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline" method='GET' >
+      <input class="form-control mr-sm-2" type="search" placeholder="Item"  name='add-btn'/>
+      <button type = 'submit' class="btn btn-outline-success my-2 my-sm-0" type="submit" >Push</button>
+</form>
+
+<form method='GET'>
+  <button type="submit" class="btn btn-outline-danger" value = 'Del%Btn' name='del-btn'>Pop</button>
+</form>
+
+<form method='GET'>
+<button type="submit" class="btn btn-outline-warning" value='Clear&Btn' name='clear-btn'>Clear Stack</button>
+</form>
+
+</nav>
+<br>
+<div class = 'container' align='center'>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary">Front : </button>
+    <button type="button" class="btn btn-secondary">{{front}}</button>
+  </div>
+</div>
+<br>
+<hr>
+<h4 align='center'>Stack</h4>
+<div class = 'container' align='center'>
+  <br>
+  {% for e in arr %}
+    <button class = 'btn btn-outline-dark'>{{e}}</button>
+  {% endfor %}
+</div>
+<hr>
+
+{% endblock content %}
